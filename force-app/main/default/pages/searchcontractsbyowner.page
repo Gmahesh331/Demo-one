@@ -1,0 +1,30 @@
+<apex:page Controller="For_searching_owner_contracts">
+    <apex:form >
+
+   <apex:pageBlock title="Owner Search">
+        <apex:pageMessages />
+       <apex:pageBlockSection title="Insurance datiles">
+           Enter Buildning Owner Name :<apex:inputtext value="{!name}"/>  
+         <apex:commandButton value="Submit"   action="{!getdata}"/>
+       </apex:pageBlockSection>  
+ 
+          <apex:pageBlock >
+
+           <apex:pageMessages />
+           
+           
+            <apex:pageBlockTable value="{!Message}" var="me" >
+
+                 <apex:column value="{!me.Name}" />  
+                 <apex:column value="{!me.Contract_Status__c}"/>
+                 <apex:column value="{!me.Flat_Number__c}"/>
+                 <apex:column value="{!me.Email__c}"/>
+                 <apex:column value="{!me.Rent_from_customer__c}"/>
+                
+            </apex:pageBlockTable>
+          
+          </apex:pageBlock>
+       
+      </apex:pageBlock>                                     
+    </apex:form>
+</apex:page>
